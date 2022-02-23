@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import { VechaiProvider, Button } from "@vechaiui/react";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <VechaiProvider>
+      <div className="flex flex-wrap w-full p-8 space-x-2">
+        <Button>Button</Button>
+        <Button variant="solid">Button</Button>
+        <Button variant="light">Button</Button>
+        <Button variant="ghost">Button</Button>
+        <Button variant="link">Button</Button>
+      </div>
+    </VechaiProvider>
   );
 }
 
