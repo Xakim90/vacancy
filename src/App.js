@@ -1,11 +1,18 @@
-import "./App.css"
-
+import logo from './logo.svg';
+import './App.css';
+import { VechaiProvider, Button } from "@vechaiui/react";
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <VechaiProvider>
+      <div className="flex flex-wrap w-full p-8 space-x-2">
+        <Button>Button</Button>
+        <Button variant="solid">Button</Button>
+        <Button variant="light">Button</Button>
+        <Button variant="ghost">Button</Button>
+        <Button variant="link">Button</Button>
+      </div>
+    </VechaiProvider>
   );
 }
 
