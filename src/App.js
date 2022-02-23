@@ -12,6 +12,9 @@ function App() {
         <Button variant="light">Button</Button>
         <Button variant="ghost">Button</Button>
         <Button variant="link">Button</Button>
+        <Button variant="solid" color="primary">Button</Button>
+        &nbsp;
+        <button className="glow-on-hover" type="button">CLICK ME!</button>
       </div>
     </VechaiProvider>
   );
