@@ -1,13 +1,16 @@
 import * as React from "react";
-import { Button } from 'antd';
-import './App.less';
+// import './App.less';
+import Carts from "./components/Carts";
 
 function App() {
   return (
-      <div className="flex flex-wrap w-full p-8 space-x-2">
-        <button className="glow-on-hover" type="button">CLICK ME!</button>
-        <Button type="primary">Button</Button>
+    <div className="grid grid-cols-3 mt-4">
+      <div className="col-span-4"></div>
+      <div className="col-span-4">
+        <Carts />
       </div>
+      <div className="col-span-4"></div>
+    </div>
   );
 }
 
