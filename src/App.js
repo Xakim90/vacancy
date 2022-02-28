@@ -1,16 +1,19 @@
 import * as React from "react";
-// import './App.less';
-import Carts from "./components/Carts";
+import { Button } from 'antd';
+import PrimaryButton from "./components/PrimaryButton";
+import AntButtton from "./components/AntButton";
+import './App.less';
+import CustomButton from "./components/CustomButton";
+import AntLayout from "./components/AntResponsiveLayout";
+
 
 function App() {
   return (
-    <div className="grid grid-cols-3 mt-4">
-      <div className="col-span-4"></div>
-      <div className="col-span-4">
-        <Carts />
-      </div>
-      <div className="col-span-4"></div>
-    </div>
+    <AntLayout />
+      // <div className="flex flex-wrap w-full p-8 space-x-2">
+        
+      //   <CustomButton height="30px" text="asdasd"/>
+      // </div>
   );
 }
 
