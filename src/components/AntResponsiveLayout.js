@@ -51,7 +51,7 @@ const AntLayout = () => {
                     {
                         routes.map((item, i) => {
                             return (
-                                <Menu.Item key={i + item.name} key={item + i} icon={item.icon} >
+                                <Menu.Item key={i + item.name} icon={item.icon} >
                                     <Link to={item.url}>{item.name}</Link>
                                 </Menu.Item>
                             )
