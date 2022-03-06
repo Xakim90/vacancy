@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./PrimaryButton.less"
 // customizable
 // button accepts icon if passed src of img
 // pass bgColor, border and hovered: boolean
