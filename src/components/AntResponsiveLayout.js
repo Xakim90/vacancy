@@ -42,7 +42,6 @@ const AntLayout = () => {
                     console.log(collapsed, type);
                 }}
             >
-                <div className="logo" />
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
                     {
                         routes.map((item, i) => {

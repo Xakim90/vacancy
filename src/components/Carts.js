@@ -1,11 +1,17 @@
 import React from 'react'
-import '../App.less';
+// import '../App.less';
 import { Card, Avatar } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
-const Carts = () => {
+const Carts = ({
+    img,
+    userImg,
+    title,
+    desc,
+    link
+}) => {
     return (
         <div>
             <Card
@@ -13,7 +19,7 @@ const Carts = () => {
                 cover={
                     <img
                         alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                        src={img}
                     />
                 }
                 actions={[
@@ -23,9 +29,9 @@ const Carts = () => {
                 ]}
             >
                 <Meta
-                    avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                    title="Card title"
-                    description="This is the description"
+                    avatar={<Avatar src={userImg} />}
+                    title={title}
+                    description={desc}
                 />
             </Card>
         </div>
