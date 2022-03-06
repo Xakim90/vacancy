@@ -1,7 +1,8 @@
 import { Layout, Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Link, Routes,Route } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 import Profile from './Profile';
+import { Register } from './Register';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -10,22 +11,26 @@ const routes = [
     {
         name: "Home",
         url: "/home",
-        icon: <UserOutlined />
+        icon: <UserOutlined />,
+        component: ""
     },
     {
         name: "Profile",
         url: "/profile",
-        icon: <VideoCameraOutlined />
+        icon: <VideoCameraOutlined />,
+        component: <Profile />
     },
     {
         name: "Works",
         url: "/works",
-        icon: <UploadOutlined />
+        icon: <UploadOutlined />,
+        component: ""
     },
     {
         name: "Register",
         url: "/register",
-        icon: <UserOutlined />
+        icon: <UserOutlined />,
+        component: <Register />
     },
 ]
 
@@ -47,7 +52,7 @@ const AntLayout = () => {
                     {
                         routes.map((item, i) => {
                             return (
-                                <Menu.Item key={i + item.name} icon={item.icon} >
+                                <Menu.Item key={i + item.name} key={item + i} icon={item.icon} >
                                     <Link to={item.url}>{item.name}</Link>
                                 </Menu.Item>
                             )
@@ -60,7 +65,12 @@ const AntLayout = () => {
                 <Content style={{ margin: '24px 16px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                         <Routes>
-                            <Route path="profile" element={<Profile />} />
+                            {
+                                routes.map((route, i) => (
+                                    <Route path={route.url} key={route + i} element={route.component} />
+                                ))
+                            }
+
                         </Routes>
                     </div>
                 </Content>
