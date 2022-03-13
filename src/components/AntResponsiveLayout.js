@@ -2,7 +2,7 @@ import { Layout, Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Link, Routes, Route } from 'react-router-dom';
 import Profile from './Profile';
-import { Register } from './Register';
+import { Register } from '../pages/Register';
 
 
 const { Header, Content, Footer, Sider } = Layout;
