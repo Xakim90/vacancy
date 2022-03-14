@@ -3,7 +3,7 @@ import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/i
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 import { Link, Routes, Route } from 'react-router-dom';
 import Profile from './Profile';
-import { Register } from './Register';
+import { Register } from '../pages/Register';
 
 
 
