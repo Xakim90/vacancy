@@ -26,7 +26,7 @@ const fields = [
 const DynamicForm = () => {
     const { register,control, handleSubmit, watch, formState: { errors } } = useForm({
         defaultValues: {
-            firstName: 'asdasd',
+            firstName: '',
             select: {}
         }
     });
