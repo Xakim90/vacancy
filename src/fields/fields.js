@@ -17,6 +17,12 @@ export const RegisterFields = [
         label: "Parol",
         required: true,
     },
+    {
+        name: "accept",
+        type: "password",
+        label: "Parolni qayta kiriting",
+        required: true,
+    },
     // {
     //     name: "Select",
     //     type: "select",
@@ -35,8 +41,8 @@ export const RegisterFields = [
     //     required: true,
     //     options: [
     //         { value: 1, label: "Chocolate" },
-    //         { value: 1, label: "Chocolate" },
-    //         { value: 2, label: "Strawberry" },
+    //         { value: 2, label: "Chocolate" },
+    //         { value: 3, label: "Strawberry" },
     //     ]
     // },
 ]
