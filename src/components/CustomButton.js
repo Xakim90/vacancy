@@ -17,17 +17,18 @@ function CustomButton({
     hovered = false,
     padding = "0 24px",
     disabled = false,
-    cursor = "pointer",
+    cursor = "",
     glowOnHover = true,
-    className = "glow-on-hover"
+    className = "glow-on-hover pointer"
 }) {
     return (
         <button
             onClick={onClick}
-            className={className}
+            className={!disabled ? className : "bg-gray-500 cursor-not-allowed"}
             style={{ backgroundColor, color, border, height, padding, cursor }}
             type={type}
             background="red!important"
+            disabled={disabled}
         >
             {icon ? (
                 <span className="button-icon">

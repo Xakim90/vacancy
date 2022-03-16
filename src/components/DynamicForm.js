@@ -5,15 +5,16 @@ import CustomButton from "./CustomButton";
 
 
 
-const DynamicForm = ({ fields, onSubmit }) => {
-    const { register, control, handleSubmit, watch, formState: { errors } } = useForm({
+const DynamicForm = ({ fields, onSubmit, disabled, change }) => {
+    const { register, control, handleSubmit, getValues, watch, formState: { errors } } = useForm({
         defaultValues: {
             // firstName: '',
             // select: {}
         }
     });
-    
+
     const [value, setValue] = React.useState(1);
+   
 
     const onChange = e => {
         console.log('radio checked', e.target.value);
@@ -21,10 +22,10 @@ const DynamicForm = ({ fields, onSubmit }) => {
     };
 
     return (
-        <>
+        <div className="flex justify-center mt-3">
             {fields && fields.length !== 0 ? (
-                <div className={fields.length / 4 <= 1 ? "flex justify-center" : ""}>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={fields.length / 4 <= 1 ? "w-1/2" : ""}>
+                    <form onChange={() => { change(getValues()) }} onSubmit={handleSubmit(onSubmit)}>
                         <div >
                             <Row gutter={[16, 16]}>
                                 {
@@ -102,14 +103,14 @@ const DynamicForm = ({ fields, onSubmit }) => {
                         </div>
                         <div className="flex justify-center mt-2">
                             <div>
-                                <CustomButton className="glow-on-hover w-full" type="submit" text="Submit" />
+                                <CustomButton disabled={disabled} className="glow-on-hover w-full" type="submit" text="Submit" />
                             </div>
                         </div>
                     </form >
                 </div>
             )
                 : null}
-        </>
+        </div>
     );
 };
 export default DynamicForm;
