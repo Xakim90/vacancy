@@ -8,9 +8,17 @@ import AntButtton from "./components/AntButton";
 import Carts from "./components/Carts";
 
 
+
+
+const lg = "lg";
+const md = "md";
+const sm = "sm";
+
 function App() {
   return (
-    <AntLayout />
+    <div>
+      <AntLayout lg={lg} md={md} sm={sm} />
+    </div>
     // <Login />
     // <Carts
     //   img="https://media.istockphoto.com/photos/this-vacation-is-just-what-we-needed-picture-id639579050?b=1&k=20&m=639579050&s=170667a&w=0&h=eXDg8mhdvjn5jBxd5g3c1tt6D_ts9sVjtpF-FUBTq34="
