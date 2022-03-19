@@ -3,8 +3,6 @@ import { useForm, Controller } from "react-hook-form";
 import { Input, Select, Row, Col, Radio } from 'antd';
 import CustomButton from "./CustomButton";
 
-
-
 const DynamicForm = ({ fields, onSubmit, disabled, change }) => {
     const { register, control, handleSubmit, getValues, watch, formState: { errors } } = useForm({
         defaultValues: {
@@ -25,7 +23,7 @@ const DynamicForm = ({ fields, onSubmit, disabled, change }) => {
         <div className="flex justify-center mt-3">
             {fields && fields.length !== 0 ? (
                 <div className={fields.length / 4 <= 1 ? "w-1/2" : ""}>
-                    <form onChange={() => { change(getValues()) }} onSubmit={handleSubmit(onSubmit)}>
+                    <form onChange={change ? () => { change(getValues()) }: null} onSubmit={handleSubmit(onSubmit)}>
                         <div >
                             <Row gutter={[16, 16]}>
                                 {
