@@ -3,6 +3,7 @@ import { Breadcrumb, Button } from "antd";
 import DynamicForm from "../components/DynamicForm";
 import { RegisterFields } from "../fields/fields";
 import AntAlert from "../components/AntAlert";
+import { instance } from "../api";
 
 export function Register() {
     const [alert, setAlert] = useState(false);
@@ -10,7 +11,13 @@ export function Register() {
 
     const onSubmit = data => {
         if (data.password === data.accept) {
-            console.log(data);
+            instance.post("register",
+                {
+                    name: data.name,
+                    email: data.email,
+                    password: data.password
+                }
+            )
         } else {
             setAlert(true)
         }

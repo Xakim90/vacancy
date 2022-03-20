@@ -4,12 +4,42 @@ import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/ico
 import { Link, Routes, Route } from 'react-router-dom';
 import Profile from './Profile';
 import { Register } from '../pages/Register';
-import { useEffect, useState } from 'react';
-
-
+import DynamicForm from './DynamicForm';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
+const onSubmit = data => {
+    if (data) {
+        console.log(data);
+    } else {
+        console.error("ERROR");
+        // setAlert(true)
+    }
+};
+
+const arr = [
+    {
+        name: "Select",
+        type: "select",
+        label: "Tanlang",
+        required: true,
+        options: [
+            { value: "chocolate", label: "Chocolate" },
+            { value: "strawberry", label: "Strawberry" },
+            { value: "vanilla", label: "Vanilla" }
+        ]
+    },
+    {
+        name: "Radio",
+        type: "radio",
+        label: "Tanlang",
+        required: true,
+        options: [
+            { value: 1, label: "Chocolate" },
+            { value: 2, label: "Chocolate" },
+            { value: 3, label: "Strawberry" },
+        ]
+    },
+]
 
 const routes = [
     {
@@ -36,7 +66,12 @@ const routes = [
         icon: <UserOutlined />,
         component: <Register />
     },
-]
+];
+routes.push({
+    name: "Form",
+    url: "/form",
+    component: <DynamicForm onSubmit={onSubmit} fields={arr} />
+})
 
 const AntLayout = () => {
     return (
