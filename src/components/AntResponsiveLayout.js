@@ -1,7 +1,7 @@
 import { Layout, Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Link, Routes, Route } from 'react-router-dom';
-import Profile from './Profile';
+import Profile from '../pages/Profile';
 import { Register } from '../pages/Register';
 import DynamicForm from './DynamicForm';
 
