@@ -1,10 +1,8 @@
 import * as React from "react";
-// import './App.less';
 import AntLayout from "./components/AntResponsiveLayout";
 
 
-
-function App() {
+const App = () => {
   return (
     <div>
       <AntLayout />

@@ -25,7 +25,7 @@ const BreadCrumbs = () => {
                             const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
                             const isLast = index === pathnames.length - 1;
                             return isLast ? (
-                                <Breadcrumb.Item>
+                                <Breadcrumb.Item key={name+index}>
                                     {name}
                                 </Breadcrumb.Item>
                             ) : (
@@ -35,14 +35,6 @@ const BreadCrumbs = () => {
                             )
                         })
                     }
-                    {/* <Breadcrumb.Item>Register</Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <a href="">Application Center</a>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <a href="">Application List</a>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>An Application</Breadcrumb.Item> */}
                 </Breadcrumb>
             </div>
         )
