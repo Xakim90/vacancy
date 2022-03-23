@@ -1,10 +1,9 @@
 import { Layout, Menu } from 'antd';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import { Link, Routes, Route } from 'react-router-dom';
-import Profile from './Profile';
-import { Register } from '../pages/Register';
+import { Link, Routes, Route, } from 'react-router-dom';
+
 import DynamicForm from './DynamicForm';
+import { routes } from '../routes/routes'
+import BreadCrumbs from './BreadCrumbs';
 
 const { Header, Content, Footer, Sider } = Layout;
 const onSubmit = data => {
@@ -41,32 +40,6 @@ const arr = [
     },
 ]
 
-const routes = [
-    {
-        name: "Home",
-        url: "/home",
-        icon: <UserOutlined />,
-        component: ""
-    },
-    {
-        name: "Profile",
-        url: "/profile",
-        icon: <VideoCameraOutlined />,
-        component: <Profile />
-    },
-    {
-        name: "Works",
-        url: "/works",
-        icon: <UploadOutlined />,
-        component: ""
-    },
-    {
-        name: "Register",
-        url: "/register",
-        icon: <UserOutlined />,
-        component: <Register />
-    },
-];
 routes.push({
     name: "Form",
     url: "/form",
@@ -102,6 +75,7 @@ const AntLayout = () => {
                 <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
                 <Content style={{ margin: '24px 16px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                        <BreadCrumbs />
                         <Routes>
                             {
                                 routes.map((route, i) => (
