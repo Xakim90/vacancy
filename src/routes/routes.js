@@ -1,5 +1,5 @@
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import Profile from '../components/Profile';
+import Profile from '../pages/Profile';
 import { Register } from '../pages/Register';
 
 export const routes = [
