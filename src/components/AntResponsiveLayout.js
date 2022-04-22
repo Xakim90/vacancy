@@ -1,10 +1,15 @@
 import { Layout, Menu } from 'antd';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Link, Routes, Route } from 'react-router-dom';
-import Profile from './Profile';
+import Profile from '../pages/Profile';
 import { Register } from '../pages/Register';
 import DynamicForm from './DynamicForm';
+<<<<<<< HEAD
 import Home from './Home';
+=======
+import { routes } from '../routes/routes'
+import BreadCrumbs from './BreadCrumbs';
+>>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
 
 const { Header, Content, Footer, Sider } = Layout;
 const onSubmit = data => {
@@ -41,6 +46,7 @@ const arr = [
     },
 ]
 
+<<<<<<< HEAD
 const routes = [
     {
         name: "Home",
@@ -67,6 +73,8 @@ const routes = [
         component: <Register />
     },
 ];
+=======
+>>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
 routes.push({
     name: "Form",
     url: "/form",
@@ -90,7 +98,11 @@ const AntLayout = () => {
                     {
                         routes.map((item, i) => {
                             return (
+<<<<<<< HEAD
                                 <Menu.Item key={item + i} icon={item.icon} >
+=======
+                                <Menu.Item key={i + item.name} icon={item.icon} >
+>>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
                                     <Link to={item.url}>{item.name}</Link>
                                 </Menu.Item>
                             )
@@ -102,6 +114,7 @@ const AntLayout = () => {
                 <Header className="site-layout-sub-header-background" style={{ padding: 0 }} />
                 <Content style={{ margin: '24px 16px 0' }}>
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                        <BreadCrumbs />
                         <Routes>
                             {
                                 routes.map((route, i) => (

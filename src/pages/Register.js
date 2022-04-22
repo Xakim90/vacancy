@@ -1,23 +1,31 @@
 import React, { useState } from "react";
-import { Breadcrumb, Button } from "antd";
+import { Button } from "antd";
 import DynamicForm from "../components/DynamicForm";
 import { RegisterFields } from "../fields/fields";
 import AntAlert from "../components/AntAlert";
-import { instance } from "../api";
+import { useDispatch } from "react-redux";
+import { authAPI } from "../actions/auth";
 
-export function Register() {
+export function Register(props) {
+    console.log(props)
     const [alert, setAlert] = useState(false);
+    const [lessPassword, setLessPassword] = useState(false);
     const [disabled, setDisabled] = useState(true);
+    const dispatch = useDispatch();
 
     const onSubmit = data => {
         if (data.password === data.accept) {
-            instance.post("register",
-                {
+            if (data.password.length >= 4) {
+                dispatch(authAPI.createUser({
                     name: data.name,
                     email: data.email,
                     password: data.password
-                }
-            )
+                }))
+
+            } else {
+                setLessPassword(true);
+            }
+
         } else {
             setAlert(true)
         }
@@ -33,17 +41,17 @@ export function Register() {
         }
     }
     const func = (e) => {
-        setAlert(false);
+        alert ? setAlert(false) : setLessPassword(false);
     }
     return (
         <>
             {
-                alert ?
+                alert || lessPassword ?
                     <AntAlert
                         onClick={func}
                         type={"error"}
                         message={"Xato"}
-                        description="parollar bir xil bo'lishi shart"
+                        description={alert ? "parollar bir xil bo'lishi shart" : lessPassword ? "parol uzunligi 4 dan kam bo'lmasligi kerak" : ""}
                         showIcon={true}
                         action={
                             <Button size="small" danger>
@@ -53,16 +61,6 @@ export function Register() {
                         closable
                     /> : null
             }
-            <Breadcrumb>
-                <Breadcrumb.Item>Register</Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <a href="">Application Center</a>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>
-                    <a href="">Application List</a>
-                </Breadcrumb.Item>
-                <Breadcrumb.Item>An Application</Breadcrumb.Item>
-            </Breadcrumb>
 
             <DynamicForm change={change} disabled={disabled} onSubmit={onSubmit} fields={RegisterFields} />
         </>

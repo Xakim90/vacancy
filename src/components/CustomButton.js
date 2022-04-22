@@ -32,7 +32,8 @@ function CustomButton({
         >
             {icon ? (
                 <span className="button-icon">
-                    <img src={icon} alt="" />
+                    <span>{icon}</span>
+                    <span>{text}</span>
                 </span>
             ) : (
                 ""
