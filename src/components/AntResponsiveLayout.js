@@ -4,6 +4,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Profile from './Profile';
 import { Register } from '../pages/Register';
 import DynamicForm from './DynamicForm';
+import Home from './Home';
 
 const { Header, Content, Footer, Sider } = Layout;
 const onSubmit = data => {
@@ -45,7 +46,7 @@ const routes = [
         name: "Home",
         url: "/home",
         icon: <UserOutlined />,
-        component: ""
+        component: <Home />
     },
     {
         name: "Profile",
@@ -89,7 +90,7 @@ const AntLayout = () => {
                     {
                         routes.map((item, i) => {
                             return (
-                                <Menu.Item key={i + item.name} key={item + i} icon={item.icon} >
+                                <Menu.Item key={item + i} icon={item.icon} >
                                     <Link to={item.url}>{item.name}</Link>
                                 </Menu.Item>
                             )
