@@ -4,12 +4,8 @@ import { Link, Routes, Route } from 'react-router-dom';
 import Profile from '../pages/Profile';
 import { Register } from '../pages/Register';
 import DynamicForm from './DynamicForm';
-<<<<<<< HEAD
-import Home from './Home';
-=======
 import { routes } from '../routes/routes'
 import BreadCrumbs from './BreadCrumbs';
->>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
 
 const { Header, Content, Footer, Sider } = Layout;
 const onSubmit = data => {
@@ -46,35 +42,6 @@ const arr = [
     },
 ]
 
-<<<<<<< HEAD
-const routes = [
-    {
-        name: "Home",
-        url: "/home",
-        icon: <UserOutlined />,
-        component: <Home />
-    },
-    {
-        name: "Profile",
-        url: "/profile",
-        icon: <VideoCameraOutlined />,
-        component: <Profile />
-    },
-    {
-        name: "Works",
-        url: "/works",
-        icon: <UploadOutlined />,
-        component: ""
-    },
-    {
-        name: "Register",
-        url: "/register",
-        icon: <UserOutlined />,
-        component: <Register />
-    },
-];
-=======
->>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
 routes.push({
     name: "Form",
     url: "/form",
@@ -98,11 +65,7 @@ const AntLayout = () => {
                     {
                         routes.map((item, i) => {
                             return (
-<<<<<<< HEAD
-                                <Menu.Item key={item + i} icon={item.icon} >
-=======
                                 <Menu.Item key={i + item.name} icon={item.icon} >
->>>>>>> 45de0e3ef0a2b8c129139e01d6e73ce7ab6aad4a
                                     <Link to={item.url}>{item.name}</Link>
                                 </Menu.Item>
                             )
